@@ -16,5 +16,13 @@ export default () => {
         symbolId: 'icon-[dir]-[name]',
       }),
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          javascriptEnabled: true,
+          additionalData: '@use "@/styles/variable.scss" as *;',
+        },
+      },
+    },
   }
 }
