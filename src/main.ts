@@ -7,6 +7,7 @@ import '@/styles/index.scss'
 const app = createApp(App)
 import GlobalComponents from './components'
 import router from './router'
+import pinia from './store'
 import zhCn from 'element-plus/es/locale/lang/zh-cn.mjs'
 app.use(ElementPlus, {
   locale: zhCn,
@@ -14,4 +15,5 @@ app.use(ElementPlus, {
 
 app.use(GlobalComponents)
 app.use(router)
+app.use(pinia)
 app.mount('#app')

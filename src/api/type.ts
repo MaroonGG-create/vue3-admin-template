@@ -6,7 +6,8 @@ export interface LoginData {
 export interface LoginResponse {
   code: number
   data: {
-    token: string
+    token?: string
+    message?: string
   }
 }
 export interface UserInfo {
