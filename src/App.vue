@@ -1,9 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
 
 <template>
   <div>
-    <h1>App</h1>
-    <SvgIcon name="mogu" color="red" />
+    <router-view />
   </div>
 </template>
 
