@@ -4,7 +4,7 @@ enum Api {
   login = '/user/login',
   UserInfo = '/user/info',
 }
-import type { LoginData,LoginResponse, UserInfo} from './type'
+import type { LoginData, LoginResponse, UserInfo } from './type'
 /**
  * 登录函数
  * @param data 登录所需的数据对象，类型为LoginData

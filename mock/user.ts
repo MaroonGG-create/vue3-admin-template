@@ -4,7 +4,8 @@ import { MockMethod } from 'vite-plugin-mock'
 const userList = [
   {
     userId: 1,
-    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    avatar:
+      'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
     username: 'admin',
     password: '111111',
     desc: '平台管理员',
@@ -15,7 +16,8 @@ const userList = [
   },
   {
     userId: 2,
-    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    avatar:
+      'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
     username: 'system',
     password: '111111',
     desc: '系统管理员',
@@ -57,9 +59,9 @@ export default [
       const checkUser = userList.find((item) => item.token === token)
 
       if (!checkUser) {
-        return { 
-          code: 201, 
-          data: { message: '获取用户信息失败' } 
+        return {
+          code: 201,
+          data: { message: '获取用户信息失败' },
         }
       }
 

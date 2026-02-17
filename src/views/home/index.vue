@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <h1>首页展示内容</h1>
   </div>
 </template>
@@ -8,6 +8,4 @@
 // 这里可以写你的业务逻辑
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

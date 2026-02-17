@@ -10,7 +10,7 @@ export interface LoginResponse {
   }
 }
 export interface UserInfo {
-  code: number,
+  code: number
   data: {
     id: number
     username: string
