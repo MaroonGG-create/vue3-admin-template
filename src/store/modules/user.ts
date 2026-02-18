@@ -2,9 +2,11 @@ import { defineStore } from 'pinia'
 import { login } from '@/api/user'
 import type { LoginData, LoginResponse } from '@/api/type'
 import { GET_TOKEN, SET_TOKEN } from '@/utils/token'
+import asyncRouterMap from '@/router/router'
 const useUserStore = defineStore('user', {
   state: () => ({
     token: GET_TOKEN(),
+    menuRoutes: asyncRouterMap,
   }),
   actions: {
     async userLogin(data: LoginData) {
