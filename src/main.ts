@@ -8,7 +8,7 @@ import GlobalComponents from './components'
 import router from './router'
 import pinia from './store'
 import zhCn from 'element-plus/es/locale/lang/zh-cn.mjs'
-
+import './permission'
 const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,

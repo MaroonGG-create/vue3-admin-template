@@ -48,7 +48,9 @@ import { ElNotification } from 'element-plus'
 import { ref, reactive } from 'vue'
 import useUserStore from '@/store/modules/user'
 import { getTimer } from '@/utils/timer'
-import router from '@/router'
+import { useRoute, useRouter } from 'vue-router'
+const $route = useRoute()
+const $router = useRouter()
 const useStore = useUserStore()
 const loginFormRef = ref<any>(null)
 const loginForm = reactive({
@@ -104,7 +106,9 @@ const handleLogin = async () => {
 
   try {
     await useStore.userLogin(loginForm)
-    router.push('/')
+    console.log($route.query)
+    const redirect = $route.query.redirect as string
+    $router.push({ path: redirect || '/' })
     //登录成功的提示信息
     ElNotification({
       type: 'success',
