@@ -2,14 +2,20 @@
   <div class="logo" v-if="setting.logoHidden">
     <img :src="setting.logo" alt="" />
 
-    <p>{{ setting.title }}</p>
+    <p v-show="!settingStore.isCollapse">{{ setting.title }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
 import setting from '@/setting'
+import useLayOutSettingStore from '@/store/modules/setting'
+let settingStore = useLayOutSettingStore()
 </script>
-
+<script lang="ts">
+export default {
+  name: 'Logo',
+}
+</script>
 <style scoped lang="scss">
 .logo {
   width: 100%;
@@ -17,7 +23,7 @@ import setting from '@/setting'
   color: white;
   display: flex;
   align-items: center;
-  padding: 40px;
+  padding: 15px;
   img {
     width: 30px;
     height: 30px;

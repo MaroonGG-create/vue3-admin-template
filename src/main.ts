@@ -4,11 +4,12 @@ import 'element-plus/dist/index.css'
 import App from './App.vue'
 import 'virtual:svg-icons-register'
 import '@/styles/index.scss'
-const app = createApp(App)
 import GlobalComponents from './components'
 import router from './router'
 import pinia from './store'
 import zhCn from 'element-plus/es/locale/lang/zh-cn.mjs'
+
+const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
 })

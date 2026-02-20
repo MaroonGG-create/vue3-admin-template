@@ -8,6 +8,7 @@ const asyncRouterMap = [
     path: '/',
     name: 'layout',
     component: () => import('@/layout/index.vue'),
+    redirect: '/home',
     meta: {
       title: '',
       hidden: false,
@@ -35,6 +36,7 @@ const asyncRouterMap = [
       hidden: false,
       icon: 'Lock',
     },
+    redirect: '/acl/permission',
     children: [
       {
         path: '/acl/permission',
@@ -77,7 +79,7 @@ const asyncRouterMap = [
       hidden: false,
       icon: 'Goods',
     },
-
+    redirect: '/product/trademark',
     children: [
       {
         path: '/product/trademark',
