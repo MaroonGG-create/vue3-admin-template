@@ -1,8 +1,14 @@
 import request from '@/utils/http'
-import type { LoginData, LoginResponse, UserInfo } from './type'
+import type {
+  LoginData,
+  loginResponseData,
+  userInfoResponseData,
+  ResponseData,
+} from './type'
 enum Api {
-  login = '/user/login',
-  UserInfo = '/user/info',
+  login = '/acl/index/login',
+  UserInfo = '/acl/index/info',
+  loginOut = '/acl/index/logout',
 }
 
 /**
@@ -11,7 +17,7 @@ enum Api {
  * @returns 返回一个请求对象，用于发送登录请求
  */
 export function login(data: LoginData) {
-  return request<LoginResponse>({
+  return request<any, loginResponseData>({
     // 调用request函数发起HTTP请求
     url: Api.login, // 设置请求的URL为Api.login常量
     method: 'post', // 设置请求方法为POST
@@ -24,8 +30,19 @@ export function login(data: LoginData) {
  * @returns {Promise} 返回一个Promise对象，包含用户信息数据
  */
 export function getUserInfo() {
-  return request<UserInfo>({
+  return request<any, userInfoResponseData>({
     url: Api.UserInfo, // 请求接口地址
     method: 'get', // 请求方法为GET
+  })
+}
+
+/**
+ * 获取用户信息
+ * @returns {Promise} 返回一个Promise对象，包含用户信息数据
+ */
+export function loginOut() {
+  return request<any, ResponseData>({
+    url: Api.loginOut, // 请求接口地址
+    method: 'post', // 请求方法为GET
   })
 }

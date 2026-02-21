@@ -3,26 +3,21 @@ export interface LoginData {
   password: string
 }
 
-export interface LoginResponse {
+export interface ResponseData {
   code: number
-  data: {
-    token?: string
-    message?: string
-  }
+  message: string
+  ok: boolean
 }
-export interface UserInfo {
-  code: number
+
+export interface loginResponseData extends ResponseData {
+  data: string
+}
+export interface userInfoResponseData extends ResponseData {
   data: {
-    id: number
-    username: string
-    nickname: string
+    routes: string[]
+    button: string[]
+    roles: string[]
+    name: string
     avatar: string
-    email: string
-    phone: string
-    status: number
-    createBy: string
-    createTime: string
-    updateBy: string
-    updateTime: string
   }
 }
