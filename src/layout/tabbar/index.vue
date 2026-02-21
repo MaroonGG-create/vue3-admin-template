@@ -19,5 +19,6 @@ import Setting from './Setting/index.vue'
 .tabbar {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #ccc;
 }
 </style>

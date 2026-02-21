@@ -19,7 +19,6 @@ const useUserStore = defineStore('user', {
   actions: {
     async userLogin(data: LoginData) {
       let res: loginResponseData = await login(data)
-
       if (res.code == 200) {
         this.token = res.data as string
         SET_TOKEN(res.data as string)
@@ -31,8 +30,6 @@ const useUserStore = defineStore('user', {
     async getUserInfoData() {
       // TODO: 获取用户信息
       let res: userInfoResponseData = await getUserInfo()
-      console.log(res)
-
       if (res.code == 200) {
         this.username = res.data.name as string
         this.avatar = res.data.avatar as string
