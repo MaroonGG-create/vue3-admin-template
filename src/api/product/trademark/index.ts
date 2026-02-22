@@ -1,23 +1,25 @@
 import request from '@/utils/http'
-
+import type { TradeMarkResponseData, Trademark, ResponseData } from './type'
 enum Api {
   TrademarkList = '/product/baseTrademark',
   TrademarkSave = '/product/baseTrademark/save',
   TrademarkUpdate = '/product/baseTrademark/update',
-  TrademarkRemove = '/admin/product/baseTrademark/remove',
+  TrademarkRemove = '/product/baseTrademark/remove',
 }
 
 export function getTrademarkList(page: number, limit: number) {
-  return request.get<any>(`${Api.TrademarkList}/${page}/${limit}`)
+  return request.get<any, TradeMarkResponseData>(
+    `${Api.TrademarkList}/${page}/${limit}`,
+  )
 }
-export function saveTrademark(data: any) {
-  return request.post<any>(Api.TrademarkSave, data)
+export function saveTrademark(data: Trademark) {
+  return request.post<any, ResponseData>(Api.TrademarkSave, data)
 }
 
-export function updateTrademark(data: any) {
-  return request.post<any>(Api.TrademarkUpdate, data)
+export function updateTrademark(data: Trademark) {
+  return request.post<any, ResponseData>(Api.TrademarkUpdate, data)
 }
 
 export function removeTrademark(id: number) {
-  return request.get<any>(`${Api.TrademarkRemove}/${id}`)
+  return request.get<any, ResponseData>(`${Api.TrademarkRemove}/${id}`)
 }

@@ -86,10 +86,12 @@ const useStore = useUserStore()
   .layout_main {
     position: absolute;
     width: calc(100% - #{$base-menu-width});
-    height: calc(100vh - $base-tabbar-height);
+    height: calc(100vh - #{$base-tabbar-height});
     top: $base-tabbar-height;
     left: $base-menu-width;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #f0f2f5;
     padding: 20px;
     transition: all 0.3s;
     &.fold {
