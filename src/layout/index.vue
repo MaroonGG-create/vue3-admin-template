@@ -58,6 +58,8 @@ const useStore = useUserStore()
   width: 100%;
   height: 100vh;
   .layout_slider {
+    display: flex;
+    flex-direction: column; /* 垂直排布 */
     width: $base-menu-width;
     height: 100vh;
     background: $base-menu-background;

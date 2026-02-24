@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>属性管理</h1>
+    <el-card style="max-width: 480px"></el-card>
   </div>
 </template>
 
