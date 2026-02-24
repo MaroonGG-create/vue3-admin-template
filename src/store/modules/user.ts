@@ -39,12 +39,18 @@ const useUserStore = defineStore('user', {
       }
     },
     async userLogout() {
-      let res: ResponseData = await loginOut()
-      if (res.code == 200) {
+      try {
+        // 1. 尝试通知后端退出（不管它成不成功）
+        await loginOut()
+      } catch (error) {
+        // 2. 如果后端没起、网络断开或者 Token 已失效，会走到这里
+        console.warn('后端登出接口调用失败，直接执行本地登出', error)
+      } finally {
+        // 3. 核心大招：无论 try 成功了，还是 catch 报错了，finally 里的代码【绝对会执行】！
         this.token = ''
         this.username = ''
         this.avatar = ''
-        REMOVE_TOKEN()
+        REMOVE_TOKEN() // 强制物理拔除 Token！
       }
     },
   },
